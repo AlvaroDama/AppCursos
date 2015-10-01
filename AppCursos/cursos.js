@@ -41,6 +41,7 @@ function guardaDatos() {
 
     };
     
+    clear(); 
     ajax.send(JSON.stringify(curso));
 }
 
@@ -100,6 +101,7 @@ function ejecutaModificacion() {
 
     };
 
+    clear();
     data.id = modificando;
     ajax.send(JSON.stringify(data));
 }
@@ -110,9 +112,8 @@ function crearTabla(array) {
     var tabla = "<table><tr><th>Nombre</th><th>Duración</th></tr>";
 
     for (var i = 0; i < array.length; i++) {
-        tabla += "<tr><td>" + array[i].nombre + "</td><td>" + array[i].duracion + "</td>";
+        tabla += '<tr onclick=\'cargaModificacion("' + array[i].id + '"\)\'><td>' + array[i].nombre + "</td><td>" + array[i].duracion + "</td>";
         tabla += '<td><button type="button" class="buttBorrar" id="Borrar:' + array[i].id + '">Borrar</button></td>';
-        tabla += '<td><button type="button" class="buttModificar" onclick=\'cargaModificacion("' + array[i].id + '"\)\'>Modificar</button></td>';
         tabla += "</tr>";
     }
 
@@ -137,6 +138,12 @@ function obtenerObjeto() {
 }
 function refresca() {
     history.go(0);
+}
+
+
+function clear() {
+    document.getElementById("txtNombre").value = "";
+    document.getElementById("txtDuracion").value = 0;
 }
 
 muestraDatos();
