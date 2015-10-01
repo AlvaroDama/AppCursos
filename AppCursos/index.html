@@ -3,21 +3,33 @@
 <head>
     <title></title>
 	<meta charset="utf-8" />
+    <style>
+        span{float:left;}
+        tr:hover{background-color:lightgray;}
+    </style>
 </head>
 <body>
     <span>
         <label for="txtNombre">Nombre:</label>
+        <br />
         <input type="text" id="txtNombre" placeholder="Nombre" />
-
+        <br />
         <label for="txtDuracion">Duración:</label>
-        <input type="text" id="txtDuracion" placeholder="Duración" />
-
+        <br />
+        <input type="number" id="txtDuracion" placeholder="Duración" />
+        <br />
         <button type="button" id="buttOK">OK</button>
+        
     </span>
 
-    <span id="lista">
+    <div id="lista">
+        
+    </div>
 
+    <span>
+        <button type="button" id="buttRefrescar">Refrescar</button>
     </span>
 
+    <script src="cursos.js"></script>
 </body>
 </html>
